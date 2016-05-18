@@ -1,0 +1,676 @@
+
+duda@ArchMain ~/Downloads/asmttpd (git)-[master] % opreport --long-filenames --callgraph    
+
+Using /home/duda/Downloads/asmttpd/oprofile_data/samples/ for samples directory.
+CPU: Intel Haswell microarchitecture, speed 3800 MHz (estimated)
+Counted CPU_CLK_UNHALTED events (Clock cycles when not halted) with a unit mask of 0x00 (No unit mask) count 90000
+samples  %        image name               symbol name
+-------------------------------------------------------------------------------
+  1        1.5e-05  /home/duda/Downloads/asmttpd/asmttpd string_itoa_done
+  1        1.5e-05  /home/duda/Downloads/asmttpd/asmttpd print_line
+  1        1.5e-05  /home/duda/Downloads/asmttpd/asmttpd add_response_html
+  2        3.0e-05  /home/duda/Downloads/asmttpd/asmttpd add_response_css
+  3        4.5e-05  /home/duda/Downloads/asmttpd/asmttpd sys_sleep
+  3        4.5e-05  /home/duda/Downloads/asmttpd/asmttpd add_response_javascript
+  3        4.5e-05  /home/duda/Downloads/asmttpd/asmttpd strstr_not_found
+  3        4.5e-05  /home/duda/Downloads/asmttpd/asmttpd strstr_found
+  4        6.0e-05  /home/duda/Downloads/asmttpd/asmttpd sys_clone
+  4        6.0e-05  /home/duda/Downloads/asmttpd/asmttpd strcmpeq.strcmpeq_dif
+  4        6.0e-05  /home/duda/Downloads/asmttpd/asmttpd detect_content_type_ret
+  5        7.5e-05  /home/duda/Downloads/asmttpd/asmttpd add_response_cont
+  5        7.5e-05  /home/duda/Downloads/asmttpd/asmttpd strcmpeq.strcmpeq_eql
+  6        9.0e-05  /home/duda/Downloads/asmttpd/asmttpd get_number_of_digits
+  6        9.0e-05  /home/duda/Downloads/asmttpd/asmttpd strcmpeq
+  7        1.0e-04  /home/duda/Downloads/asmttpd/asmttpd strcpy_32
+  8        1.2e-04  /home/duda/Downloads/asmttpd/asmttpd gnod_ret
+  8        1.2e-04  /home/duda/Downloads/asmttpd/asmttpd string_copy
+  8        1.2e-04  /home/duda/Downloads/asmttpd/asmttpd string_remove_ret
+  12       1.8e-04  /home/duda/Downloads/asmttpd/asmttpd string_concat_int
+  12       1.8e-04  /home/duda/Downloads/asmttpd/asmttpd add_content_type_header
+  16       2.4e-04  /home/duda/Downloads/asmttpd/asmttpd string_itoa
+  16       2.4e-04  /home/duda/Downloads/asmttpd/asmttpd detect_content_type
+  23       3.4e-04  /home/duda/Downloads/asmttpd/asmttpd string_remove
+  24       3.6e-04  /home/duda/Downloads/asmttpd/asmttpd create_http200_response
+  25       3.7e-04  /home/duda/Downloads/asmttpd/asmttpd string_contains
+  33       4.9e-04  /home/duda/Downloads/asmttpd/asmttpd strcmpeq.strcmpeq_loop
+  34       5.1e-04  /home/duda/Downloads/asmttpd/asmttpd get_string_length
+  42       6.3e-04  /home/duda/Downloads/asmttpd/asmttpd string_itoa_start
+  46       6.9e-04  /home/duda/Downloads/asmttpd/asmttpd string_ends_with
+  50       7.5e-04  /home/duda/Downloads/asmttpd/asmttpd strstr_loop
+  51       7.6e-04  /home/duda/Downloads/asmttpd/asmttpd gnod_cont
+  161       0.0024  /home/duda/Downloads/asmttpd/asmttpd string_concat
+  368       0.0055  /home/duda/Downloads/asmttpd/asmttpd init_loop
+  587       0.0088  /home/duda/Downloads/asmttpd/asmttpd get_string_length.strlen_loop4
+  74817     1.1170  /home/duda/Downloads/asmttpd/asmttpd sys_lseek
+  77019     1.1499  /home/duda/Downloads/asmttpd/asmttpd sys_cork
+  285050    4.2559  /home/duda/Downloads/asmttpd/asmttpd sys_send
+  495254    7.3943  /home/duda/Downloads/asmttpd/asmttpd sys_open
+  826187   12.3353  /home/duda/Downloads/asmttpd/asmttpd sys_accept
+  902743   13.4783  /home/duda/Downloads/asmttpd/asmttpd sys_uncork
+  1105342  16.5032  /home/duda/Downloads/asmttpd/asmttpd sys_sendfile
+  1255172  18.7402  /home/duda/Downloads/asmttpd/asmttpd sys_close
+  1674592  25.0023  /home/duda/Downloads/asmttpd/asmttpd sys_recv
+
+6708273  94.7509  /no-vmlinux              /no-vmlinux
+  6708273  100.000  /no-vmlinux              /no-vmlinux [self]
+-------------------------------------------------------------------------------
+98520     1.3915  /home/duda/Downloads/asmttpd/asmttpd get_string_length.strlen_loop4
+  98520    99.4077  /home/duda/Downloads/asmttpd/asmttpd get_string_length.strlen_loop4 [self]
+  587       0.5923  /no-vmlinux              /no-vmlinux
+-------------------------------------------------------------------------------
+59481     0.8401  /home/duda/Downloads/asmttpd/asmttpd init_loop
+  59481    99.3851  /home/duda/Downloads/asmttpd/asmttpd init_loop [self]
+  368       0.6149  /no-vmlinux              /no-vmlinux
+-------------------------------------------------------------------------------
+29666     0.4190  /home/duda/Downloads/asmttpd/asmttpd string_concat
+  29666    99.4602  /home/duda/Downloads/asmttpd/asmttpd string_concat [self]
+  161       0.5398  /no-vmlinux              /no-vmlinux
+-------------------------------------------------------------------------------
+26138     0.3692  /home/duda/Downloads/asmttpd/asmttpd sys_accept
+  826187   96.9333  /no-vmlinux              /no-vmlinux
+  26138     3.0667  /home/duda/Downloads/asmttpd/asmttpd sys_accept [self]
+-------------------------------------------------------------------------------
+17575     0.2482  /home/duda/Downloads/asmttpd/asmttpd sys_recv
+  1674592  98.9614  /no-vmlinux              /no-vmlinux
+  17575     1.0386  /home/duda/Downloads/asmttpd/asmttpd sys_recv [self]
+-------------------------------------------------------------------------------
+13048     0.1843  /home/duda/Downloads/asmttpd/asmttpd sys_close
+  1255172  98.9712  /no-vmlinux              /no-vmlinux
+  13048     1.0288  /home/duda/Downloads/asmttpd/asmttpd sys_close [self]
+-------------------------------------------------------------------------------
+9724      0.1373  /home/duda/Downloads/asmttpd/asmttpd string_ends_with
+  9724     99.5292  /home/duda/Downloads/asmttpd/asmttpd string_ends_with [self]
+  46        0.4708  /no-vmlinux              /no-vmlinux
+-------------------------------------------------------------------------------
+9721      0.1373  /home/duda/Downloads/asmttpd/asmttpd strstr_loop
+  9721     99.4883  /home/duda/Downloads/asmttpd/asmttpd strstr_loop [self]
+  50        0.5117  /no-vmlinux              /no-vmlinux
+-------------------------------------------------------------------------------
+9490      0.1340  /home/duda/Downloads/asmttpd/asmttpd string_itoa_start
+  9490     99.5594  /home/duda/Downloads/asmttpd/asmttpd string_itoa_start [self]
+  42        0.4406  /no-vmlinux              /no-vmlinux
+-------------------------------------------------------------------------------
+8467      0.1196  /home/duda/Downloads/asmttpd/asmttpd gnod_cont
+  8467     99.4013  /home/duda/Downloads/asmttpd/asmttpd gnod_cont [self]
+  51        0.5987  /no-vmlinux              /no-vmlinux
+-------------------------------------------------------------------------------
+8464      0.1195  /home/duda/Downloads/asmttpd/asmttpd sys_lseek
+  74817    89.8368  /no-vmlinux              /no-vmlinux
+  8464     10.1632  /home/duda/Downloads/asmttpd/asmttpd sys_lseek [self]
+-------------------------------------------------------------------------------
+7775      0.1098  /home/duda/Downloads/asmttpd/asmttpd sys_uncork
+  902743   99.1461  /no-vmlinux              /no-vmlinux
+  7775      0.8539  /home/duda/Downloads/asmttpd/asmttpd sys_uncork [self]
+-------------------------------------------------------------------------------
+6836      0.0966  /home/duda/Downloads/asmttpd/asmttpd sys_open
+  495254   98.6385  /no-vmlinux              /no-vmlinux
+  6836      1.3615  /home/duda/Downloads/asmttpd/asmttpd sys_open [self]
+-------------------------------------------------------------------------------
+6729      0.0950  /home/duda/Downloads/asmttpd/asmttpd sys_sendfile
+  1105342  99.3949  /no-vmlinux              /no-vmlinux
+  6729      0.6051  /home/duda/Downloads/asmttpd/asmttpd sys_sendfile [self]
+-------------------------------------------------------------------------------
+6363      0.0899  /home/duda/Downloads/asmttpd/asmttpd sys_cork
+  77019    92.3689  /no-vmlinux              /no-vmlinux
+  6363      7.6311  /home/duda/Downloads/asmttpd/asmttpd sys_cork [self]
+-------------------------------------------------------------------------------
+5721      0.0808  /home/duda/Downloads/asmttpd/asmttpd string_contains
+  5721     99.5649  /home/duda/Downloads/asmttpd/asmttpd string_contains [self]
+  25        0.4351  /no-vmlinux              /no-vmlinux
+-------------------------------------------------------------------------------
+5408      0.0764  /home/duda/Downloads/asmttpd/asmttpd strcmpeq.strcmpeq_loop
+  5408     99.3935  /home/duda/Downloads/asmttpd/asmttpd strcmpeq.strcmpeq_loop [self]
+  33        0.6065  /no-vmlinux              /no-vmlinux
+-------------------------------------------------------------------------------
+5343      0.0755  /home/duda/Downloads/asmttpd/asmttpd create_http200_response
+  5343     99.5528  /home/duda/Downloads/asmttpd/asmttpd create_http200_response [self]
+  24        0.4472  /no-vmlinux              /no-vmlinux
+-------------------------------------------------------------------------------
+4715      0.0666  /home/duda/Downloads/asmttpd/asmttpd sys_send
+  285050   98.3728  /no-vmlinux              /no-vmlinux
+  4715      1.6272  /home/duda/Downloads/asmttpd/asmttpd sys_send [self]
+-------------------------------------------------------------------------------
+3974      0.0561  /home/duda/Downloads/asmttpd/asmttpd string_remove
+  3974     99.4246  /home/duda/Downloads/asmttpd/asmttpd string_remove [self]
+  23        0.5754  /no-vmlinux              /no-vmlinux
+-------------------------------------------------------------------------------
+3949      0.0558  /home/duda/Downloads/asmttpd/asmttpd detect_content_type
+  3949     99.5965  /home/duda/Downloads/asmttpd/asmttpd detect_content_type [self]
+  16        0.4035  /no-vmlinux              /no-vmlinux
+-------------------------------------------------------------------------------
+3752      0.0530  /home/duda/Downloads/asmttpd/asmttpd get_string_length
+  3752     99.1020  /home/duda/Downloads/asmttpd/asmttpd get_string_length [self]
+  34        0.8980  /no-vmlinux              /no-vmlinux
+-------------------------------------------------------------------------------
+3112      0.0440  /home/duda/Downloads/asmttpd/asmttpd string_itoa
+  3112     99.4885  /home/duda/Downloads/asmttpd/asmttpd string_itoa [self]
+  16        0.5115  /no-vmlinux              /no-vmlinux
+-------------------------------------------------------------------------------
+2224      0.0314  /home/duda/Downloads/asmttpd/asmttpd add_content_type_header
+  2224     99.4633  /home/duda/Downloads/asmttpd/asmttpd add_content_type_header [self]
+  12        0.5367  /no-vmlinux              /no-vmlinux
+-------------------------------------------------------------------------------
+1915      0.0270  /home/duda/Downloads/asmttpd/asmttpd string_copy
+  1915     99.5840  /home/duda/Downloads/asmttpd/asmttpd string_copy [self]
+  8         0.4160  /no-vmlinux              /no-vmlinux
+-------------------------------------------------------------------------------
+1765      0.0249  /home/duda/Downloads/asmttpd/asmttpd get_number_of_digits
+  1765     99.6612  /home/duda/Downloads/asmttpd/asmttpd get_number_of_digits [self]
+  6         0.3388  /no-vmlinux              /no-vmlinux
+-------------------------------------------------------------------------------
+1730      0.0244  /home/duda/Downloads/asmttpd/asmttpd string_concat_int
+  1730     99.3111  /home/duda/Downloads/asmttpd/asmttpd string_concat_int [self]
+  12        0.6889  /no-vmlinux              /no-vmlinux
+-------------------------------------------------------------------------------
+1289      0.0182  /home/duda/Downloads/asmttpd/asmttpd string_remove_ret
+  1289     99.3832  /home/duda/Downloads/asmttpd/asmttpd string_remove_ret [self]
+  8         0.6168  /no-vmlinux              /no-vmlinux
+-------------------------------------------------------------------------------
+1123      0.0159  /home/duda/Downloads/asmttpd/asmttpd strcpy_32
+  1123     99.3805  /home/duda/Downloads/asmttpd/asmttpd strcpy_32 [self]
+  7         0.6195  /no-vmlinux              /no-vmlinux
+-------------------------------------------------------------------------------
+1034      0.0146  /home/duda/Downloads/asmttpd/asmttpd gnod_ret
+  1034     99.2322  /home/duda/Downloads/asmttpd/asmttpd gnod_ret [self]
+  8         0.7678  /no-vmlinux              /no-vmlinux
+-------------------------------------------------------------------------------
+995       0.0141  /home/duda/Downloads/asmttpd/asmttpd add_response_cont
+  995      99.5000  /home/duda/Downloads/asmttpd/asmttpd add_response_cont [self]
+  5         0.5000  /no-vmlinux              /no-vmlinux
+-------------------------------------------------------------------------------
+993       0.0140  /home/duda/Downloads/asmttpd/asmttpd detect_content_type_ret
+  993      99.5988  /home/duda/Downloads/asmttpd/asmttpd detect_content_type_ret [self]
+  4         0.4012  /no-vmlinux              /no-vmlinux
+-------------------------------------------------------------------------------
+743       0.0105  /home/duda/Downloads/asmttpd/asmttpd strcmpeq.strcmpeq_dif
+  743      99.4645  /home/duda/Downloads/asmttpd/asmttpd strcmpeq.strcmpeq_dif [self]
+  4         0.5355  /no-vmlinux              /no-vmlinux
+-------------------------------------------------------------------------------
+658       0.0093  /home/duda/Downloads/asmttpd/asmttpd strcmpeq
+  658      99.0964  /home/duda/Downloads/asmttpd/asmttpd strcmpeq [self]
+  6         0.9036  /no-vmlinux              /no-vmlinux
+-------------------------------------------------------------------------------
+601       0.0085  /home/duda/Downloads/asmttpd/asmttpd add_response_javascript
+  601      99.5033  /home/duda/Downloads/asmttpd/asmttpd add_response_javascript [self]
+  3         0.4967  /no-vmlinux              /no-vmlinux
+-------------------------------------------------------------------------------
+577       0.0081  /home/duda/Downloads/asmttpd/asmttpd strstr_not_found
+  577      99.4828  /home/duda/Downloads/asmttpd/asmttpd strstr_not_found [self]
+  3         0.5172  /no-vmlinux              /no-vmlinux
+-------------------------------------------------------------------------------
+465       0.0066  /home/duda/Downloads/asmttpd/asmttpd strcmpeq.strcmpeq_eql
+  465      98.9362  /home/duda/Downloads/asmttpd/asmttpd strcmpeq.strcmpeq_eql [self]
+  5         1.0638  /no-vmlinux              /no-vmlinux
+-------------------------------------------------------------------------------
+343       0.0048  /home/duda/Downloads/asmttpd/asmttpd string_remove_start
+  343      100.000  /home/duda/Downloads/asmttpd/asmttpd string_remove_start [self]
+-------------------------------------------------------------------------------
+327       0.0046  /home/duda/Downloads/asmttpd/asmttpd add_response_css
+  327      99.3921  /home/duda/Downloads/asmttpd/asmttpd add_response_css [self]
+  2         0.6079  /no-vmlinux              /no-vmlinux
+-------------------------------------------------------------------------------
+319       0.0045  /home/duda/Downloads/asmttpd/asmttpd string_itoa_done
+  319      99.6875  /home/duda/Downloads/asmttpd/asmttpd string_itoa_done [self]
+  1         0.3125  /no-vmlinux              /no-vmlinux
+-------------------------------------------------------------------------------
+295       0.0042  /home/duda/Downloads/asmttpd/asmttpd add_response_html
+  295      99.6622  /home/duda/Downloads/asmttpd/asmttpd add_response_html [self]
+  1         0.3378  /no-vmlinux              /no-vmlinux
+-------------------------------------------------------------------------------
+264       0.0037  /home/duda/Downloads/asmttpd/asmttpd strstr_found
+  264      98.8764  /home/duda/Downloads/asmttpd/asmttpd strstr_found [self]
+  3         1.1236  /no-vmlinux              /no-vmlinux
+-------------------------------------------------------------------------------
+1        1.4e-05  /home/duda/Downloads/asmttpd/asmttpd sys_sleep
+  3        75.0000  /no-vmlinux              /no-vmlinux
+  1        25.0000  /home/duda/Downloads/asmttpd/asmttpd sys_sleep [self]
+-------------------------------------------------------------------------------
+0              0  /home/duda/Downloads/asmttpd/asmttpd print_line
+  1        100.000  /no-vmlinux              /no-vmlinux
+  0              0  /home/duda/Downloads/asmttpd/asmttpd print_line [self]
+-------------------------------------------------------------------------------
+0              0  /home/duda/Downloads/asmttpd/asmttpd sys_clone
+  4        100.000  /no-vmlinux              /no-vmlinux
+  0              0  /home/duda/Downloads/asmttpd/asmttpd sys_clone [self]
+-------------------------------------------------------------------------------
+
+
+
+
+
+samples  %        samples  %        samples  %        samples  %        samples  %        samples  %        samples  %        samples  %        image name               symbol name
+-------------------------------------------------------------------------------
+  0              0  0              0  1         0.0013  0              0  1         0.0012  0              0  0              0  0              0  asmttpd                  add_content_type_header
+  0              0  0              0  0              0  0              0  5         0.0059  0              0  0              0  0              0  asmttpd                  sys_clone
+  0              0  0              0  0              0  0              0  1         0.0012  0              0  0              0  0              0  asmttpd                  sys_write
+  0              0  0              0  0              0  1         0.0013  0              0  0              0  0              0  0              0  asmttpd                  add_response_cont
+  0              0  0              0  0              0  0              0  0              0  1         0.0012  0              0  1         0.0012  asmttpd                  string_itoa
+  0              0  0              0  0              0  0              0  1         0.0012  0              0  0              0  0              0  asmttpd                  gnod_ret
+  0              0  0              0  0              0  0              0  0              0  0              0  1         0.0012  0              0  asmttpd                  strcmpeq.strcmpeq_dif
+  0              0  0              0  0              0  0              0  1         0.0012  0              0  0              0  0              0  asmttpd                  strcmpeq.strcmpeq_loop
+  0              0  0              0  0              0  0              0  0              0  0              0  1         0.0012  0              0  asmttpd                  get_string_length
+  0              0  1         0.0013  1         0.0013  0              0  1         0.0012  0              0  0              0  0              0  asmttpd                  string_itoa_start
+  0              0  0              0  0              0  0              0  1         0.0012  0              0  1         0.0012  0              0  asmttpd                  string_remove_ret
+  1         0.0013  1         0.0013  0              0  1         0.0013  0              0  0              0  0              0  0              0  asmttpd                  detect_content_type
+  2         0.0026  0              0  0              0  0              0  0              0  0              0  0              0  1         0.0012  asmttpd                  strstr_loop
+  2         0.0026  0              0  0              0  0              0  0              0  0              0  0              0  0              0  asmttpd                  get_number_of_digits
+  2         0.0026  2         0.0026  1         0.0013  2         0.0026  1         0.0012  2         0.0024  2         0.0024  1         0.0012  asmttpd                  string_concat
+  3         0.0040  0              0  1         0.0013  0              0  1         0.0012  0              0  1         0.0012  1         0.0012  asmttpd                  gnod_cont
+  3         0.0040  0              0  0              0  0              0  0              0  0              0  0              0  1         0.0012  asmttpd                  string_ends_with
+  5         0.0066  0              0  0              0  0              0  0              0  0              0  0              0  0              0  asmttpd                  string_remove
+  5         0.0066  1         0.0013  1         0.0013  0              0  0              0  1         0.0012  1         0.0012  2         0.0024  asmttpd                  create_http200_response
+  13        0.0172  4         0.0051  6         0.0078  4         0.0052  6         0.0071  7         0.0083  8         0.0096  5         0.0059  asmttpd                  get_string_length.strlen_loop4
+  15        0.0199  5         0.0064  2         0.0026  1         0.0013  5         0.0059  0              0  1         0.0012  5         0.0059  asmttpd                  init_loop
+  815       1.0796  900       1.1560  850       1.1080  920       1.1914  950       1.1262  955       1.1385  929       1.1174  986       1.1727  asmttpd                  sys_lseek
+  823       1.0902  839       1.0777  861       1.1223  857       1.1098  946       1.1215  926       1.1039  898       1.0802  877       1.0431  asmttpd                  sys_cork
+  3157      4.1818  3371      4.3300  3339      4.3524  3416      4.4237  3760      4.4574  3659      4.3619  3560      4.2821  3740      4.4483  asmttpd                  sys_send
+  6045      8.0074  6244      8.0203  6185      8.0622  6184      8.0083  6683      7.9226  6624      7.8965  6606      7.9460  6743      8.0200  asmttpd                  sys_open
+  9213     12.2038  9504     12.2078  9222     12.0210  9386     12.1549  10148    12.0303  10121    12.0653  10201    12.2703  9930     11.8106  asmttpd                  sys_accept
+  9917     13.1363  10262    13.1814  10225    13.3284  10311    13.3528  11397    13.5109  11388    13.5757  11016    13.2506  11332    13.4781  asmttpd                  sys_uncork
+  12666    16.7777  13181    16.9308  12846    16.7449  12857    16.6498  13869    16.4414  13925    16.6001  13810    16.6113  13767    16.3743  asmttpd                  sys_sendfile
+  14125    18.7103  14524    18.6559  14480    18.8748  14340    18.5703  15858    18.7993  15731    18.7531  15752    18.9473  16060    19.1015  asmttpd                  sys_close
+  18681    24.7453  19013    24.4220  18695    24.3691  18940    24.5273  20719    24.5620  20545    24.4919  20348    24.4756  20625    24.5311  asmttpd                  sys_recv
+  75610    94.6438  77959    94.5554  76820    94.6689  77352    94.5531  84480    94.5739  84041    94.6962  83247    94.7615  84228    94.6978  no-vmlinux               /no-vmlinux
+  75610    100.000  77959    100.000  76820    100.000  77352    100.000  84480    100.000  84041    100.000  83247    100.000  84228    100.000  no-vmlinux               /no-vmlinux [self]
+-------------------------------------------------------------------------------
+  1143      1.4307  1228      1.4894  1183      1.4579  1150      1.4057  1303      1.4587  1221      1.3758  1158      1.3182  1266      1.4234  asmttpd                  get_string_length.strlen_loop4
+  1143     98.8754  1228     99.6753  1183     99.4954  1150     99.6534  1303     99.5416  1221     99.4300  1158     99.3139  1266     99.6066  asmttpd                  get_string_length.strlen_loop4 [self]
+  13        1.1246  4         0.3247  6         0.5046  4         0.3466  6         0.4584  7         0.5700  8         0.6861  5         0.3934  no-vmlinux               /no-vmlinux
+------------------------------------------------------------------------------- 
+  712       0.8912  685       0.8308  777       0.9575  713       0.8716  773       0.8654  751       0.8462  768       0.8742  759       0.8533  asmttpd                  init_loop
+  712      97.9367  685      99.2754  777      99.7433  713      99.8599  773      99.3573  751      100.000  768      99.8700  759      99.3455  asmttpd                  init_loop [self]
+  15        2.0633  5         0.7246  2         0.2567  1         0.1401  5         0.6427  0              0  1         0.1300  5         0.6545  no-vmlinux               /no-vmlinux
+-------------------------------------------------------------------------------
+  318       0.3981  347       0.4209  322       0.3968  392       0.4792  393       0.4400  385       0.4338  377       0.4291  369       0.4149  asmttpd                  string_concat
+  318      99.3750  347      99.4269  322      99.6904  392      99.4924  393      99.7462  385      99.4832  377      99.4723  369      99.7297  asmttpd                  string_concat [self]
+  2         0.6250  2         0.5731  1         0.3096  2         0.5076  1         0.2538  2         0.5168  2         0.5277  1         0.2703  no-vmlinux               /no-vmlinux
+-------------------------------------------------------------------------------
+  298       0.3730  315       0.3821  303       0.3734  354       0.4327  351       0.3929  321       0.3617  320       0.3643  327       0.3676  asmttpd                  sys_accept
+  9213     96.8668  9504     96.7919  9222     96.8189  9386     96.3655  10148    96.6568  10121    96.9259  10201    96.9585  9930     96.8119  no-vmlinux               /no-vmlinux
+  298       3.1332  315       3.2081  303       3.1811  354       3.6345  351       3.3432  321       3.0741  320       3.0415  327       3.1881  asmttpd                  sys_accept [self]
+-------------------------------------------------------------------------------
+  186       0.2328  218       0.2644  199       0.2452  216       0.2640  196       0.2194  225       0.2535  214       0.2436  227       0.2552  asmttpd                  sys_recv
+  18681    99.0142  19013    98.8664  18695    98.9468  18940    98.8724  20719    99.0629  20545    98.9167  20348    98.9592  20625    98.9114  no-vmlinux               /no-vmlinux
+  186       0.9858  218       1.1336  199       1.0532  216       1.1276  196       0.9371  225       1.0833  214       1.0408  227       1.0886  asmttpd                  sys_recv [self]
+-------------------------------------------------------------------------------
+  158       0.1978  129       0.1565  156       0.1922  139       0.1699  173       0.1937  167       0.1882  204       0.2322  162       0.1821  asmttpd                  sys_close
+  14125    98.8938  14524    99.1196  14480    98.9341  14340    99.0400  15858    98.9208  15731    98.9496  15752    98.7215  16060    99.0014  no-vmlinux               /no-vmlinux
+  158       1.1062  129       0.8804  156       1.0659  139       0.9600  173       1.0792  167       1.0504  204       1.2785  162       0.9986  asmttpd                  sys_close [self]
+-------------------------------------------------------------------------------
+111       0.1389  112       0.1358  96        0.1183  109       0.1332  118       0.1321  100       0.1127  108       0.1229  111       0.1248  asmttpd                  sys_lseek
+  815      88.0130  900      88.9328  850      89.8520  920      89.4072  950      88.9513  955      90.5213  929      89.5853  986      89.8815  no-vmlinux               /no-vmlinux
+  111      11.9870  112      11.0672  96       10.1480  109      10.5928  118      11.0487  100       9.4787  108      10.4147  111      10.1185  asmttpd                  sys_lseek [self]
+-------------------------------------------------------------------------------
+110       0.1377  79        0.0958  100       0.1232  98        0.1198  109       0.1220  125       0.1408  116       0.1320  111       0.1248  asmttpd                  gnod_cont
+  110      97.3451  79       100.000  100      99.0099  98       100.000  109      99.0909  125      100.000  116      99.1453  111      99.1071  asmttpd                  gnod_cont [self]
+  3         2.6549  0              0  1         0.9901  0              0  1         0.9091  0              0  1         0.8547  1         0.8929  no-vmlinux               /no-vmlinux
+-------------------------------------------------------------------------------
+110       0.1377  138       0.1674  100       0.1232  112       0.1369  143       0.1601  137       0.1544  112       0.1275  118       0.1327  asmttpd                  string_ends_with
+  110      97.3451  138      100.000  100      100.000  112      100.000  143      100.000  137      100.000  112      100.000  118      99.1597  asmttpd                  string_ends_with [self]
+  3         2.6549  0              0  0              0  0              0  0              0  0              0  0              0  1         0.8403  no-vmlinux               /no-vmlinux
+-------------------------------------------------------------------------------
+107       0.1339  145       0.1759  119       0.1466  111       0.1357  137       0.1534  135       0.1521  102       0.1161  133       0.1495  asmttpd                  string_itoa_start
+  107      100.000  145      99.3151  119      99.1667  111      100.000  137      99.2754  135      100.000  102      100.000  133      100.000  asmttpd                  string_itoa_start [self]
+  0              0  1         0.6849  1         0.8333  0              0  1         0.7246  0              0  0              0  0              0  no-vmlinux               /no-vmlinux
+-------------------------------------------------------------------------------
+84        0.1051  86        0.1043  72        0.0887  82        0.1002  101       0.1131  94        0.1059  89        0.1013  87        0.0978  asmttpd                  strstr_loop
+  84       97.6744  86       100.000  72       100.000  82       100.000  101      100.000  94       100.000  89       100.000  87       98.8636  asmttpd                  strstr_loop [self]
+  2         2.3256  0              0  0              0  0              0  0              0  0              0  0              0  1         1.1364  no-vmlinux               /no-vmlinux
+-------------------------------------------------------------------------------
+79        0.0989  70        0.0849  70        0.0863  61        0.0746  85        0.0952  65        0.0732  75        0.0854  69        0.0776  asmttpd                  strcmpeq.strcmpeq_loop
+  79       100.000  70       100.000  70       100.000  61       100.000  85       98.8372  65       100.000  75       100.000  69       100.000  asmttpd                  strcmpeq.strcmpeq_loop [self]
+  0              0  0              0  0              0  0              0  1         1.1628  0              0  0              0  0              0  no-vmlinux               /no-vmlinux
+-------------------------------------------------------------------------------
+76        0.0951  86        0.1043  66        0.0813  78        0.0953  91        0.1019  84        0.0947  88        0.1002  85        0.0956  asmttpd                  sys_cork
+  823      91.5462  839      90.7027  861      92.8803  857      91.6578  946      91.2247  926      91.6832  898      91.0751  877      91.1642  no-vmlinux               /no-vmlinux
+  76        8.4538  86        9.2973  66        7.1197  78        8.3422  91        8.7753  84        8.3168  88        8.9249  85        8.8358  asmttpd                  sys_cork [self]
+-------------------------------------------------------------------------------
+74        0.0926  68        0.0825  50        0.0616  52        0.0636  62        0.0694  82        0.0924  57        0.0649  65        0.0731  asmttpd                  create_http200_response
+  74       93.6709  68       98.5507  50       98.0392  52       100.000  62       100.000  82       98.7952  57       98.2759  65       97.0149  asmttpd                  create_http200_response [self]
+  5         6.3291  1         1.4493  1         1.9608  0              0  0              0  1         1.2048  1         1.7241  2         2.9851  no-vmlinux               /no-vmlinux
+-------------------------------------------------------------------------------
+72        0.0901  79        0.0958  73        0.0900  91        0.1112  78        0.0873  89        0.1003  82        0.0933  79        0.0888  asmttpd                  sys_sendfile
+  12666    99.4348  13181    99.4042  12846    99.4349  12857    99.2972  13869    99.4407  13925    99.3649  13810    99.4097  13767    99.4294  no-vmlinux               /no-vmlinux
+  72        0.5652  79        0.5958  73        0.5651  91        0.7028  78        0.5593  89        0.6351  82        0.5903  79        0.5706  asmttpd                  sys_sendfile [self]
+-------------------------------------------------------------------------------
+71        0.0889  83        0.1007  89        0.1097  76        0.0929  87        0.0974  92        0.1037  91        0.1036  89        0.1001  asmttpd                  sys_uncork
+  9917     99.2891  10262    99.1977  10225    99.1371  10311    99.2683  11397    99.2424  11388    99.1986  11016    99.1807  11332    99.2207  no-vmlinux               /no-vmlinux
+  71        0.7109  83        0.8023  89        0.8629  76        0.7317  87        0.7576  92        0.8014  91        0.8193  89        0.7793  asmttpd                  sys_uncork [self]
+-------------------------------------------------------------------------------
+68        0.0851  80        0.0970  64        0.0789  58        0.0709  77        0.0862  85        0.0958  77        0.0877  67        0.0753  asmttpd                  string_contains
+  68       100.000  80       100.000  64       100.000  58       100.000  77       100.000  85       100.000  77       100.000  67       100.000  asmttpd                  string_contains [self]
+-------------------------------------------------------------------------------
+59        0.0739  74        0.0898  71        0.0875  92        0.1125  94        0.1052  84        0.0947  72        0.0820  81        0.0911  asmttpd                  sys_open
+  6045     99.0334  6244     98.8287  6185     98.8651  6184     98.5341  6683     98.6130  6624     98.7478  6606     98.9218  6743     98.8130  no-vmlinux               /no-vmlinux
+  59        0.9666  74        1.1713  71        1.1349  92        1.4659  94        1.3870  84        1.2522  72        1.0782  81        1.1870  asmttpd                  sys_open [self]
+-------------------------------------------------------------------------------
+49        0.0613  64        0.0776  41        0.0505  54        0.0660  59        0.0660  60        0.0676  52        0.0592  59        0.0663  asmttpd                  detect_content_type
+  49       98.0000  64       98.4615  41       100.000  54       98.1818  59       100.000  60       100.000  52       100.000  59       100.000  asmttpd                  detect_content_type [self]
+  1         2.0000  1         1.5385  0              0  1         1.8182  0              0  0              0  0              0  0              0  no-vmlinux               /no-vmlinux
+-------------------------------------------------------------------------------
+43        0.0538  62        0.0752  61        0.0752  57        0.0697  68        0.0761  55        0.0620  62        0.0706  58        0.0652  asmttpd                  sys_send
+  3157     98.6562  3371     98.1940  3339     98.2059  3416     98.3588  3760     98.2236  3659     98.5191  3560     98.2882  3740     98.4729  no-vmlinux               /no-vmlinux
+  43        1.3438  62        1.8060  61        1.7941  57        1.6412  68        1.7764  55        1.4809  62        1.7118  58        1.5271  asmttpd                  sys_send [self]
+-------------------------------------------------------------------------------
+40        0.0501  42        0.0509  40        0.0493  44        0.0538  50        0.0560  39        0.0439  42        0.0478  51        0.0573  asmttpd                  get_string_length
+  40       100.000  42       100.000  40       100.000  44       100.000  50       100.000  39       100.000  42       97.6744  51       100.000  asmttpd                  get_string_length [self]
+  0              0  0              0  0              0  0              0  0              0  0              0  1         2.3256  0              0  no-vmlinux               /no-vmlinux
+-------------------------------------------------------------------------------
+38        0.0476  36        0.0437  31        0.0382  39        0.0477  32        0.0358  37        0.0417  47        0.0535  43        0.0483  asmttpd                  string_remove
+  38       88.3721  36       100.000  31       100.000  39       100.000  32       100.000  37       100.000  47       100.000  43       100.000  asmttpd                  string_remove [self]
+  5        11.6279  0              0  0              0  0              0  0              0  0              0  0              0  0              0  no-vmlinux               /no-vmlinux
+-------------------------------------------------------------------------------
+36        0.0451  38        0.0461  40        0.0493  40        0.0489  36        0.0403  31        0.0349  37        0.0421  42        0.0472  asmttpd                  string_itoa
+  36       100.000  38       100.000  40       100.000  40       100.000  36       100.000  31       96.8750  37       100.000  42       97.6744  asmttpd                  string_itoa [self]
+  0              0  0              0  0              0  0              0  0              0  1         3.1250  0              0  1         2.3256  no-vmlinux               /no-vmlinux
+-------------------------------------------------------------------------------
+26        0.0325  30        0.0364  26        0.0320  30        0.0367  32        0.0358  23        0.0259  41        0.0467  30        0.0337  asmttpd                  add_content_type_header
+  26       100.000  30       100.000  26       96.2963  30       100.000  32       96.9697  23       100.000  41       100.000  30       100.000  asmttpd                  add_content_type_header [self]
+  0              0  0              0  1         3.7037  0              0  1         3.0303  0              0  0              0  0              0  no-vmlinux               /no-vmlinux
+-------------------------------------------------------------------------------
+24        0.0300  25        0.0303  34        0.0419  26        0.0318  25        0.0280  35        0.0394  40        0.0455  38        0.0427  asmttpd                  string_copy
+  24       100.000  25       100.000  34       100.000  26       100.000  25       100.000  35       100.000  40       100.000  38       100.000  asmttpd                  string_copy [self]
+-------------------------------------------------------------------------------
+19        0.0238  16        0.0194  13        0.0160  23        0.0281  26        0.0291  21        0.0237  19        0.0216  26        0.0292  asmttpd                  string_concat_int
+  19       100.000  16       100.000  13       100.000  23       100.000  26       100.000  21       100.000  19       100.000  26       100.000  asmttpd                  string_concat_int [self]
+-------------------------------------------------------------------------------
+18        0.0225  18        0.0218  16        0.0197  17        0.0208  15        0.0168  6         0.0068  15        0.0171  20        0.0225  asmttpd                  strcpy_32
+  18       100.000  18       100.000  16       100.000  17       100.000  15       100.000  6        100.000  15       100.000  20       100.000  asmttpd                  strcpy_32 [self]
+-------------------------------------------------------------------------------
+17        0.0213  12        0.0146  11        0.0136  12        0.0147  14        0.0157  23        0.0259  13        0.0148  22        0.0247  asmttpd                  gnod_ret
+  17       100.000  12       100.000  11       100.000  12       100.000  14       93.3333  23       100.000  13       100.000  22       100.000  asmttpd                  gnod_ret [self]
+  0              0  0              0  0              0  0              0  1         6.6667  0              0  0              0  0              0  no-vmlinux               /no-vmlinux
+-------------------------------------------------------------------------------
+17        0.0213  21        0.0255  13        0.0160  19        0.0232  17        0.0190  11        0.0124  17        0.0194  15        0.0169  asmttpd                  string_remove_ret
+  17       100.000  21       100.000  13       100.000  19       100.000  17       94.4444  11       100.000  17       94.4444  15       100.000  asmttpd                  string_remove_ret [self]
+  0              0  0              0  0              0  0              0  1         5.5556  0              0  1         5.5556  0              0  no-vmlinux               /no-vmlinux
+-------------------------------------------------------------------------------
+15        0.0188  24        0.0291  19        0.0234  18        0.0220  22        0.0246  27        0.0304  24        0.0273  16        0.0180  asmttpd                  get_number_of_digits
+  15       88.2353  24       100.000  19       100.000  18       100.000  22       100.000  27       100.000  24       100.000  16       100.000  asmttpd                  get_number_of_digits [self]
+  2        11.7647  0              0  0              0  0              0  0              0  0              0  0              0  0              0  no-vmlinux               /no-vmlinux
+-------------------------------------------------------------------------------
+15        0.0188  7         0.0085  11        0.0136  14        0.0171  11        0.0123  13        0.0146  13        0.0148  13        0.0146  asmttpd                  strcmpeq
+  15       100.000  7        100.000  11       100.000  14       100.000  11       100.000  13       100.000  13       100.000  13       100.000  asmttpd                  strcmpeq [self]
+-------------------------------------------------------------------------------
+13        0.0163  7         0.0085  7         0.0086  8         0.0098  8         0.0090  9         0.0101  6         0.0068  11        0.0124  asmttpd                  add_response_javascript
+  13       100.000  7        100.000  7        100.000  8        100.000  8        100.000  9        100.000  6        100.000  11       100.000  asmttpd                  add_response_javascript [self]
+-------------------------------------------------------------------------------
+13        0.0163  13        0.0158  14        0.0173  16        0.0196  12        0.0134  16        0.0180  8         0.0091  8         0.0090  asmttpd                  detect_content_type_ret
+  13       100.000  13       100.000  14       100.000  16       100.000  12       100.000  16       100.000  8        100.000  8        100.000  asmttpd                  detect_content_type_ret [self]
+-------------------------------------------------------------------------------
+11        0.0138  9         0.0109  10        0.0123  13        0.0159  8         0.0090  11        0.0124  11        0.0125  11        0.0124  asmttpd                  add_response_cont
+  11       100.000  9        100.000  10       100.000  13       92.8571  8        100.000  11       100.000  11       100.000  11       100.000  asmttpd                  add_response_cont [self]
+  0              0  0              0  0              0  1         7.1429  0              0  0              0  0              0  0              0  no-vmlinux               /no-vmlinux
+-------------------------------------------------------------------------------
+11        0.0138  11        0.0133  3         0.0037  9         0.0110  13        0.0146  9         0.0101  10        0.0114  17        0.0191  asmttpd                  strcmpeq.strcmpeq_dif
+  11       100.000  11       100.000  3        100.000  9        100.000  13       100.000  9        100.000  10       90.9091  17       100.000  asmttpd                  strcmpeq.strcmpeq_dif [self]
+  0              0  0              0  0              0  0              0  0              0  0              0  1         9.0909  0              0  no-vmlinux               /no-vmlinux
+-------------------------------------------------------------------------------
+11        0.0138  2         0.0024  2         0.0025  4         0.0049  4         0.0045  9         0.0101  10        0.0114  7         0.0079  asmttpd                  strcmpeq.strcmpeq_eql
+  11       100.000  2        100.000  2        100.000  4        100.000  4        100.000  9        100.000  10       100.000  7        100.000  asmttpd                  strcmpeq.strcmpeq_eql [self]
+-------------------------------------------------------------------------------
+8         0.0100  10        0.0121  5         0.0062  9         0.0110  5         0.0056  12        0.0135  8         0.0091  5         0.0056  asmttpd                  strstr_not_found
+  8        100.000  10       100.000  5        100.000  9        100.000  5        100.000  12       100.000  8        100.000  5        100.000  asmttpd                  strstr_not_found [self]
+-------------------------------------------------------------------------------
+7         0.0088  4         0.0049  3         0.0037  8         0.0098  2         0.0022  4         0.0045  1         0.0011  5         0.0056  asmttpd                  string_itoa_done
+  7        100.000  4        100.000  3        100.000  8        100.000  2        100.000  4        100.000  1        100.000  5        100.000  asmttpd                  string_itoa_done [self]
+-------------------------------------------------------------------------------
+4         0.0050  1         0.0012  1         0.0012  2         0.0024  4         0.0045  7         0.0079  3         0.0034  2         0.0022  asmttpd                  strstr_found
+  4        100.000  1        100.000  1        100.000  2        100.000  4        100.000  7        100.000  3        100.000  2        100.000  asmttpd                  strstr_found [self]
+-------------------------------------------------------------------------------
+3         0.0038  7         0.0085  5         0.0062  2         0.0024  3         0.0034  3         0.0034  5         0.0057  4         0.0045  asmttpd                  add_response_css
+  3        100.000  7        100.000  5        100.000  2        100.000  3        100.000  3        100.000  5        100.000  4        100.000  asmttpd                  add_response_css [self]
+-------------------------------------------------------------------------------
+3         0.0038  3         0.0036  4         0.0049  3         0.0037  5         0.0056  2         0.0023  3         0.0034  3         0.0034  asmttpd                  add_response_html
+  3        100.000  3        100.000  4        100.000  3        100.000  5        100.000  2        100.000  3        100.000  3        100.000  asmttpd                  add_response_html [self]
+-------------------------------------------------------------------------------
+2         0.0025  5         0.0061  6         0.0074  5         0.0061  5         0.0056  2         0.0023  5         0.0057  5         0.0056  asmttpd                  string_remove_start
+  2        100.000  5        100.000  6        100.000  5        100.000  5        100.000  2        100.000  5        100.000  5        100.000  asmttpd                  string_remove_start [self]
+-------------------------------------------------------------------------------
+0              0  0              0  0              0  0              0  0              0  0              0  0              0  0              0  asmttpd                  sys_clone
+  0              0  0              0  0              0  0              0  5        100.000  0              0  0              0  0              0  no-vmlinux               /no-vmlinux
+  0              0  0              0  0              0  0              0  0              0  0              0  0              0  0              0  asmttpd                  sys_clone [self]
+-------------------------------------------------------------------------------
+0              0  0              0  0              0  0              0  0              0  0              0  0              0  0              0  asmttpd                  sys_write
+  0              0  0              0  0              0  0              0  1        100.000  0              0  0              0  0              0  no-vmlinux               /no-vmlinux
+  0              0  0              0  0              0  0              0  0              0  0              0  0              0  0              0  asmttpd                  sys_write [self]
+-------------------------------------------------------------------------------
+
+
+
+
+
+samples  %        samples  %        samples  %        samples  %        samples  %        samples  %        samples  %        samples  %        samples  %        image name               symbol name
+-------------------------------------------------------------------------------
+  0              0  3        2.5e-05  3        2.5e-05  1        8.2e-06  2        1.6e-05  7        5.8e-05  2        1.6e-05  1        8.2e-06  9        7.4e-05  asmttpd                  add_response_html
+  0              0  818       0.0067  876       0.0072  910       0.0075  883       0.0073  824       0.0068  894       0.0074  807       0.0066  782       0.0064  asmttpd                  get_string_length.strlen_loop4
+  0              0  15       1.2e-04  19       1.6e-04  9        7.4e-05  26       2.1e-04  18       1.5e-04  21       1.7e-04  12       9.9e-05  13       1.1e-04  asmttpd                  strcmpeq
+  0              0  60       4.9e-04  65       5.3e-04  58       4.8e-04  63       5.2e-04  47       3.9e-04  58       4.8e-04  73       6.0e-04  69       5.7e-04  asmttpd                  strcmpeq.strcmpeq_loop
+  0              0  2        1.6e-05  3        2.5e-05  5        4.1e-05  2        1.6e-05  5        4.1e-05  7        5.8e-05  6        4.9e-05  6        4.9e-05  asmttpd                  strcmpeq.strcmpeq_eql
+  0              0  14       1.1e-04  4        3.3e-05  7        5.8e-05  8        6.6e-05  9        7.4e-05  8        6.6e-05  14       1.2e-04  8        6.6e-05  asmttpd                  strcmpeq.strcmpeq_dif
+  0              0  88       7.2e-04  89       7.3e-04  92       7.6e-04  104      8.6e-04  88       7.2e-04  78       6.4e-04  88       7.2e-04  98       8.1e-04  asmttpd                  gnod_cont
+  0              0  6        4.9e-05  7        5.8e-05  12       9.9e-05  14       1.2e-04  10       8.2e-05  14       1.2e-04  5        4.1e-05  10       8.2e-05  asmttpd                  gnod_ret
+  0              0  32       2.6e-04  44       3.6e-04  42       3.5e-04  53       4.4e-04  36       3.0e-04  30       2.5e-04  46       3.8e-04  56       4.6e-04  asmttpd                  detect_content_type
+  0              0  8        6.6e-05  15       1.2e-04  10       8.2e-05  9        7.4e-05  8        6.6e-05  12       9.9e-05  10       8.2e-05  9        7.4e-05  asmttpd                  detect_content_type_ret
+  0              0  21       1.7e-04  38       3.1e-04  30       2.5e-04  16       1.3e-04  16       1.3e-04  17       1.4e-04  18       1.5e-04  25       2.1e-04  asmttpd                  add_content_type_header
+  0              0  1634758  13.4160  1627202  13.3898  1629549  13.3950  1630163  13.4052  1624471  13.3830  1626632  13.3804  1630304  13.3991  1631212  13.4092  asmttpd                  sys_uncork
+  0              0  4        3.3e-05  3        2.5e-05  5        4.1e-05  3        2.5e-05  1        8.2e-06  2        1.6e-05  5        4.1e-05  6        4.9e-05  asmttpd                  add_response_css
+  0              0  3        2.5e-05  3        2.5e-05  6        4.9e-05  0              0  5        4.1e-05  4        3.3e-05  7        5.8e-05  3        2.5e-05  asmttpd                  add_response_javascript
+  0              0  9        7.4e-05  11       9.1e-05  5        4.1e-05  5        4.1e-05  9        7.4e-05  18       1.5e-04  17       1.4e-04  13       1.1e-04  asmttpd                  add_response_cont
+  0              0  50       4.1e-04  50       4.1e-04  72       5.9e-04  53       4.4e-04  49       4.0e-04  58       4.8e-04  51       4.2e-04  43       3.5e-04  asmttpd                  create_http200_response
+  0              0  138825    1.1393  138833    1.1424  138666    1.1398  138215    1.1366  138895    1.1443  139039    1.1437  139272    1.1446  138146    1.1356  asmttpd                  sys_cork
+  0              0  139423    1.1442  138641    1.1408  139675    1.1481  139034    1.1433  139754    1.1513  138595    1.1401  138405    1.1375  139432    1.1462  asmttpd                  sys_lseek
+  0              0  871667    7.1535  872485    7.1795  870591    7.1563  873039    7.1792  871518    7.1799  871064    7.1652  871404    7.1619  872263    7.1704  asmttpd                  sys_open
+  0              0  2275940  18.6779  2265821  18.6449  2270932  18.6673  2268277  18.6525  2266807  18.6748  2271332  18.6836  2272411  18.6765  2279138  18.7355  asmttpd                  sys_close
+  0              0  528130    4.3342  527886    4.3438  526072    4.3244  528350    4.3447  527229    4.3435  528901    4.3507  528200    4.3412  526764    4.3302  asmttpd                  sys_send
+  0              0  3086554  25.3304  3085680  25.3913  3082489  25.3383  3082897  25.3513  3083405  25.4023  3084788  25.3750  3084866  25.3539  3083607  25.3485  asmttpd                  sys_recv
+  0              0  87       7.1e-04  102      8.4e-04  102      8.4e-04  93       7.6e-04  104      8.6e-04  105      8.6e-04  105      8.6e-04  96       7.9e-04  asmttpd                  string_ends_with
+  0              0  16       1.3e-04  15       1.2e-04  18       1.5e-04  16       1.3e-04  12       9.9e-05  10       8.2e-05  13       1.1e-04  18       1.5e-04  asmttpd                  get_number_of_digits
+  0              0  1986865  16.3056  1975788  16.2582  1988026  16.3418  1980566  16.2866  1965488  16.1924  1977462  16.2663  1979219  16.2668  1972752  16.2168  asmttpd                  sys_sendfile
+  0              0  1520273  12.4764  1517389  12.4862  1516440  12.4653  1517299  12.4771  1517975  12.5057  1516176  12.4718  1520416  12.4960  1518846  12.4855  asmttpd                  sys_accept
+  0              0  646       0.0053  637       0.0052  646       0.0053  645       0.0053  632       0.0052  662       0.0054  623       0.0051  552       0.0045  asmttpd                  init_loop
+  0              0  33       2.7e-04  35       2.9e-04  30       2.5e-04  29       2.4e-04  25       2.1e-04  25       2.1e-04  29       2.4e-04  35       2.9e-04  asmttpd                  string_itoa
+  0              0  95       7.8e-04  70       5.8e-04  90       7.4e-04  98       8.1e-04  128       0.0011  94       7.7e-04  92       7.6e-04  99       8.1e-04  asmttpd                  string_itoa_start
+  0              0  0              0  3        2.5e-05  1        8.2e-06  5        4.1e-05  3        2.5e-05  2        1.6e-05  7        5.8e-05  4        3.3e-05  asmttpd                  string_itoa_done
+  0              0  13       1.1e-04  21       1.7e-04  20       1.6e-04  31       2.5e-04  18       1.5e-04  16       1.3e-04  34       2.8e-04  25       2.1e-04  asmttpd                  string_copy
+  0              0  19       1.6e-04  9        7.4e-05  13       1.1e-04  5        4.1e-05  7        5.8e-05  7        5.8e-05  11       9.0e-05  10       8.2e-05  asmttpd                  strcpy_32
+  0              0  15       1.2e-04  18       1.5e-04  22       1.8e-04  13       1.1e-04  24       2.0e-04  26       2.1e-04  16       1.3e-04  18       1.5e-04  asmttpd                  string_concat_int
+  0              0  266       0.0022  296       0.0024  317       0.0026  291       0.0024  319       0.0026  277       0.0023  301       0.0025  286       0.0024  asmttpd                  string_concat
+  0              0  63       5.2e-04  55       4.5e-04  60       4.9e-04  58       4.8e-04  66       5.4e-04  60       4.9e-04  57       4.7e-04  66       5.4e-04  asmttpd                  string_contains
+  0              0  71       5.8e-04  58       4.8e-04  71       5.8e-04  111      9.1e-04  70       5.8e-04  77       6.3e-04  71       5.8e-04  74       6.1e-04  asmttpd                  strstr_loop
+  0              0  10       8.2e-05  7        5.8e-05  11       9.0e-05  3        2.5e-05  7        5.8e-05  4        3.3e-05  11       9.0e-05  8        6.6e-05  asmttpd                  strstr_not_found
+  0              0  5        4.1e-05  3        2.5e-05  3        2.5e-05  3        2.5e-05  4        3.3e-05  5        4.1e-05  3        2.5e-05  4        3.3e-05  asmttpd                  strstr_found
+  0              0  58       4.8e-04  39       3.2e-04  34       2.8e-04  34       2.8e-04  27       2.2e-04  38       3.1e-04  26       2.1e-04  39       3.2e-04  asmttpd                  string_remove
+  0              0  2        1.6e-05  3        2.5e-05  6        4.9e-05  3        2.5e-05  1        8.2e-06  5        4.1e-05  4        3.3e-05  10       8.2e-05  asmttpd                  string_remove_start
+  0              0  11       9.0e-05  20       1.6e-04  14       1.2e-04  14       1.2e-04  10       8.2e-05  18       1.5e-04  9        7.4e-05  13       1.1e-04  asmttpd                  string_remove_ret
+  0              0  193       0.0016  183       0.0015  155       0.0013  157       0.0013  175       0.0014  168       0.0014  174       0.0014  175       0.0014  asmttpd                  get_string_length
+  1         1.4706  0              0  0              0  0              0  0              0  0              0  0              0  0              0  0              0  asmttpd                  sys_write
+  1         1.4706  0              0  0              0  0              0  0              0  0              0  0              0  0              0  0              0  asmttpd                  sys_mmap_stack
+  3         4.4118  0              0  0              0  0              0  0              0  0              0  0              0  0              0  0              0  asmttpd                  sys_clone
+  63       92.6471  0              0  0              0  0              0  0              0  0              0  0              0  0              0  0              0  asmttpd                  sys_sleep
+73       91.2500  12203858 94.7112  12171157 94.7024  12184608 94.7133  12179486 94.7213  12156749 94.7044  12175793 94.6961  12186502 94.7092  12184397 94.6927  no-vmlinux               /no-vmlinux
+  73       100.000  12203858 100.000  12171157 100.000  12184608 100.000  12179486 100.000  12156749 100.000  12175793 100.000  12186502 100.000  12184397 100.000  no-vmlinux               /no-vmlinux [self]
+-------------------------------------------------------------------------------
+2         2.5000  2        1.6e-05  0              0  2        1.6e-05  0              0  2        1.6e-05  1        7.8e-06  1        7.8e-06  0              0  asmttpd                  sys_sleep
+  63       96.9231  0              0  0              0  0              0  0              0  0              0  0              0  0              0  0              0  no-vmlinux               /no-vmlinux
+  2         3.0769  2        100.000  0              0  2        100.000  0              0  2        100.000  1        100.000  1        100.000  0              0  asmttpd                  sys_sleep [self]
+-------------------------------------------------------------------------------
+1         1.2500  3043      0.0236  3031      0.0236  3003      0.0233  2910      0.0226  2968      0.0231  2913      0.0227  2887      0.0224  3105      0.0241  asmttpd                  get_number_of_digits
+  1        100.000  3043     99.4770  3031     99.5076  3003     99.4042  2910     99.4532  2968     99.5973  2913     99.6579  2887     99.5517  3105     99.4236  asmttpd                  get_number_of_digits [self]
+  0              0  16        0.5230  15        0.4924  18        0.5958  16        0.5468  12        0.4027  10        0.3421  13        0.4483  18        0.5764  no-vmlinux               /no-vmlinux
+-------------------------------------------------------------------------------
+1         1.2500  113465    0.8806  113708    0.8847  113387    0.8814  112813    0.8774  112564    0.8769  113911    0.8859  111856    0.8693  112644    0.8754  asmttpd                  init_loop
+  1        100.000  113465   99.4339  113708   99.4429  113387   99.4335  112813   99.4315  112564   99.4417  113911   99.4222  111856   99.4461  112644   99.5124  asmttpd                  init_loop [self]
+  0              0  646       0.5661  637       0.5571  646       0.5665  645       0.5685  632       0.5583  662       0.5778  623       0.5539  552       0.4876  no-vmlinux               /no-vmlinux
+-------------------------------------------------------------------------------
+1         1.2500  48744     0.3783  48677     0.3788  48729     0.3788  48855     0.3800  48517     0.3780  49249     0.3830  48612     0.3778  49202     0.3824  asmttpd                  sys_accept
+  1        100.000  48744     3.1067  48677     3.1082  48729     3.1133  48855     3.1194  48517     3.0972  49249     3.1460  48612     3.0982  49202     3.1378  asmttpd                  sys_accept [self]
+  0              0  1520273  96.8933  1517389  96.8918  1516440  96.8867  1517299  96.8806  1517975  96.9028  1516176  96.8540  1520416  96.9018  1518846  96.8622  no-vmlinux               /no-vmlinux
+-------------------------------------------------------------------------------
+1         1.2500  11052     0.0858  11206     0.0872  10887     0.0846  11082     0.0862  10929     0.0851  11246     0.0875  11345     0.0882  11243     0.0874  asmttpd                  sys_sendfile
+  1        100.000  11052     0.5532  11206     0.5640  10887     0.5446  11082     0.5564  10929     0.5530  11246     0.5655  11345     0.5699  11243     0.5667  asmttpd                  sys_sendfile [self]
+  0              0  1986865  99.4468  1975788  99.4360  1988026  99.4554  1980566  99.4436  1965488  99.4470  1977462  99.4345  1979219  99.4301  1972752  99.4333  no-vmlinux               /no-vmlinux
+-------------------------------------------------------------------------------
+1         1.2500  13185     0.1023  13066     0.1017  13078     0.1017  12737     0.0991  13033     0.1015  12993     0.1011  13435     0.1044  13201     0.1026  asmttpd                  sys_uncork
+  1        100.000  13185     0.8001  13066     0.7966  13078     0.7962  12737     0.7753  13033     0.7959  12993     0.7924  13435     0.8173  13201     0.8028  asmttpd                  sys_uncork [self]
+  0              0  1634758  99.1999  1627202  99.2034  1629549  99.2038  1630163  99.2247  1624471  99.2041  1626632  99.2076  1630304  99.1827  1631212  99.1972  no-vmlinux               /no-vmlinux
+-------------------------------------------------------------------------------
+0              0  4114      0.0319  4217      0.0328  4131      0.0321  4232      0.0329  4113      0.0320  4109      0.0320  4285      0.0333  4087      0.0318  asmttpd                  add_content_type_header
+  0              0  21        0.5079  38        0.8931  30        0.7210  16        0.3766  16        0.3875  17        0.4120  18        0.4183  25        0.6080  no-vmlinux               /no-vmlinux
+  0              0  4114     99.4921  4217     99.1069  4131     99.2790  4232     99.6234  4113     99.6125  4109     99.5880  4285     99.5817  4087     99.3920  asmttpd                  add_content_type_header [self]
+-------------------------------------------------------------------------------
+0              0  1849      0.0143  1791      0.0139  1824      0.0142  1835      0.0143  1855      0.0145  1864      0.0145  1824      0.0142  1823      0.0142  asmttpd                  add_response_cont
+  0              0  9         0.4844  11        0.6104  5         0.2734  5         0.2717  9         0.4828  18        0.9564  17        0.9234  13        0.7081  no-vmlinux               /no-vmlinux
+  0              0  1849     99.5156  1791     99.3896  1824     99.7266  1835     99.7283  1855     99.5172  1864     99.0436  1824     99.0766  1823     99.2919  asmttpd                  add_response_cont [self]
+-------------------------------------------------------------------------------
+0              0  614       0.0048  618       0.0048  617       0.0048  620       0.0048  604       0.0047  649       0.0050  623       0.0048  594       0.0046  asmttpd                  add_response_css
+  0              0  4         0.6472  3         0.4831  5         0.8039  3         0.4815  1         0.1653  2         0.3072  5         0.7962  6         1.0000  no-vmlinux               /no-vmlinux
+  0              0  614      99.3528  618      99.5169  617      99.1961  620      99.5185  604      99.8347  649      99.6928  623      99.2038  594      99.0000  asmttpd                  add_response_css [self]
+-------------------------------------------------------------------------------
+0              0  571       0.0044  547       0.0043  524       0.0041  555       0.0043  547       0.0043  500       0.0039  546       0.0042  538       0.0042  asmttpd                  add_response_html
+  0              0  3         0.5226  3         0.5455  1         0.1905  2         0.3591  7         1.2635  2         0.3984  1         0.1828  9         1.6453  no-vmlinux               /no-vmlinux
+  0              0  571      99.4774  547      99.4545  524      99.8095  555      99.6409  547      98.7365  500      99.6016  546      99.8172  538      98.3547  asmttpd                  add_response_html [self]
+-------------------------------------------------------------------------------
+0              0  821       0.0064  810       0.0063  818       0.0064  786       0.0061  822       0.0064  847       0.0066  754       0.0059  798       0.0062  asmttpd                  add_response_javascript
+  0              0  3         0.3641  3         0.3690  6         0.7282  0              0  5         0.6046  4         0.4700  7         0.9198  3         0.3745  no-vmlinux               /no-vmlinux
+  0              0  821      99.6359  810      99.6310  818      99.2718  786      100.000  822      99.3954  847      99.5300  754      99.0802  798      99.6255  asmttpd                  add_response_javascript [self]
+-------------------------------------------------------------------------------
+0              0  9782      0.0759  9676      0.0753  9906      0.0770  9962      0.0775  9949      0.0775  9853      0.0766  9828      0.0764  9761      0.0759  asmttpd                  create_http200_response
+  0              0  50        0.5085  50        0.5141  72        0.7216  53        0.5292  49        0.4901  58        0.5852  51        0.5162  43        0.4386  no-vmlinux               /no-vmlinux
+  0              0  9782     99.4915  9676     99.4859  9906     99.2784  9962     99.4708  9949     99.5099  9853     99.4148  9828     99.4838  9761     99.5614  asmttpd                  create_http200_response [self]
+-------------------------------------------------------------------------------
+0              0  7216      0.0560  7218      0.0562  7253      0.0564  7182      0.0559  7311      0.0570  7461      0.0580  7257      0.0564  7430      0.0577  asmttpd                  detect_content_type
+  0              0  32        0.4415  44        0.6059  42        0.5757  53        0.7326  36        0.4900  30        0.4005  46        0.6299  56        0.7481  no-vmlinux               /no-vmlinux
+  0              0  7216     99.5585  7218     99.3941  7253     99.4243  7182     99.2674  7311     99.5100  7461     99.5995  7257     99.3701  7430     99.2519  asmttpd                  detect_content_type [self]
+-------------------------------------------------------------------------------
+0              0  1924      0.0149  1949      0.0152  2001      0.0156  1979      0.0154  1911      0.0149  1996      0.0155  1997      0.0155  1976      0.0154  asmttpd                  detect_content_type_ret
+  0              0  8         0.4141  15        0.7637  10        0.4973  9         0.4527  8         0.4169  12        0.5976  10        0.4983  9         0.4534  no-vmlinux               /no-vmlinux
+  0              0  1924     99.5859  1949     99.2363  2001     99.5027  1979     99.5473  1911     99.5831  1996     99.4024  1997     99.5017  1976     99.5466  asmttpd                  detect_content_type_ret [self]
+-------------------------------------------------------------------------------
+0              0  30949     0.2402  31017     0.2413  31080     0.2416  30956     0.2407  30913     0.2408  31289     0.2433  31142     0.2420  31194     0.2424  asmttpd                  get_string_length
+  0              0  193       0.6197  183       0.5865  155       0.4962  157       0.5046  175       0.5629  168       0.5341  174       0.5556  175       0.5579  no-vmlinux               /no-vmlinux
+  0              0  30949    99.3803  31017    99.4135  31080    99.5038  30956    99.4954  30913    99.4371  31289    99.4659  31142    99.4444  31194    99.4421  asmttpd                  get_string_length [self]
+-------------------------------------------------------------------------------
+0              0  151080    1.1725  151347    1.1776  151175    1.1751  150457    1.1701  150863    1.1753  151614    1.1792  151134    1.1746  152529    1.1854  asmttpd                  get_string_length.strlen_loop4
+  0              0  818       0.5385  876       0.5755  910       0.5983  883       0.5835  824       0.5432  894       0.5862  807       0.5311  782       0.5101  no-vmlinux               /no-vmlinux
+  0              0  151080   99.4615  151347   99.4245  151175   99.4017  150457   99.4165  150863   99.4568  151614   99.4138  151134   99.4689  152529   99.4899  asmttpd                  get_string_length.strlen_loop4 [self]
+-------------------------------------------------------------------------------
+0              0  15834     0.1229  15992     0.1244  16019     0.1245  16047     0.1248  16204     0.1262  15979     0.1243  16157     0.1256  16040     0.1247  asmttpd                  gnod_cont
+  0              0  88        0.5527  89        0.5534  92        0.5710  104       0.6439  88        0.5401  78        0.4858  88        0.5417  98        0.6073  no-vmlinux               /no-vmlinux
+  0              0  15834    99.4473  15992    99.4466  16019    99.4290  16047    99.3561  16204    99.4599  15979    99.5142  16157    99.4583  16040    99.3927  asmttpd                  gnod_cont [self]
+-------------------------------------------------------------------------------
+0              0  2146      0.0167  2109      0.0164  2238      0.0174  2084      0.0162  2047      0.0159  2152      0.0167  2188      0.0170  2174      0.0169  asmttpd                  gnod_ret
+  0              0  6         0.2788  7         0.3308  12        0.5333  14        0.6673  10        0.4861  14        0.6464  5         0.2280  10        0.4579  no-vmlinux               /no-vmlinux
+  0              0  2146     99.7212  2109     99.6692  2238     99.4667  2084     99.3327  2047     99.5139  2152     99.3536  2188     99.7720  2174     99.5421  asmttpd                  gnod_ret [self]
+-------------------------------------------------------------------------------
+0              0  3315      0.0257  3645      0.0284  3409      0.0265  3454      0.0269  3552      0.0277  3444      0.0268  3324      0.0258  3368      0.0262  asmttpd                  strcmpeq
+  0              0  15        0.4505  19        0.5186  9         0.2633  26        0.7471  18        0.5042  21        0.6061  12        0.3597  13        0.3845  no-vmlinux               /no-vmlinux
+  0              0  3315     99.5495  3645     99.4814  3409     99.7367  3454     99.2529  3552     99.4958  3444     99.3939  3324     99.6403  3368     99.6155  asmttpd                  strcmpeq [self]
+-------------------------------------------------------------------------------
+0              0  1307      0.0101  1279      0.0100  1337      0.0104  1315      0.0102  1350      0.0105  1263      0.0098  1354      0.0105  1332      0.0104  asmttpd                  strcmpeq.strcmpeq_dif
+  0              0  14        1.0598  4         0.3118  7         0.5208  8         0.6047  9         0.6623  8         0.6294  14        1.0234  8         0.5970  no-vmlinux               /no-vmlinux
+  0              0  1307     98.9402  1279     99.6882  1337     99.4792  1315     99.3953  1350     99.3377  1263     99.3706  1354     98.9766  1332     99.4030  asmttpd                  strcmpeq.strcmpeq_dif [self]
+-------------------------------------------------------------------------------
+0              0  1151      0.0089  1053      0.0082  1095      0.0085  1100      0.0086  1163      0.0091  1103      0.0086  1100      0.0085  1139      0.0089  asmttpd                  strcmpeq.strcmpeq_eql
+  0              0  2         0.1735  3         0.2841  5         0.4545  2         0.1815  5         0.4281  7         0.6306  6         0.5425  6         0.5240  no-vmlinux               /no-vmlinux
+  0              0  1151     99.8265  1053     99.7159  1095     99.5455  1100     99.8185  1163     99.5719  1103     99.3694  1100     99.4575  1139     99.4760  asmttpd                  strcmpeq.strcmpeq_eql [self]
+-------------------------------------------------------------------------------
+0              0  9845      0.0764  9765      0.0760  9922      0.0771  9749      0.0758  9901      0.0771  9745      0.0758  9911      0.0770  9835      0.0764  asmttpd                  strcmpeq.strcmpeq_loop
+  0              0  60        0.6058  65        0.6612  58        0.5812  63        0.6421  47        0.4725  58        0.5917  73        0.7312  69        0.6967  no-vmlinux               /no-vmlinux
+  0              0  9845     99.3942  9765     99.3388  9922     99.4188  9749     99.3579  9901     99.5275  9745     99.4083  9911     99.2688  9835     99.3033  asmttpd                  strcmpeq.strcmpeq_loop [self]
+-------------------------------------------------------------------------------
+0              0  1570      0.0122  1577      0.0123  1546      0.0120  1592      0.0124  1547      0.0121  1576      0.0123  1535      0.0119  1481      0.0115  asmttpd                  strcpy_32
+  0              0  19        1.1957  9         0.5675  13        0.8339  5         0.3131  7         0.4505  7         0.4422  11        0.7115  10        0.6707  no-vmlinux               /no-vmlinux
+  0              0  1570     98.8043  1577     99.4325  1546     99.1661  1592     99.6869  1547     99.5495  1576     99.5578  1535     99.2885  1481     99.3293  asmttpd                  strcpy_32 [self]
+-------------------------------------------------------------------------------
+0              0  55110     0.4277  54864     0.4269  54801     0.4260  54721     0.4256  54935     0.4280  54695     0.4254  54830     0.4261  54942     0.4270  asmttpd                  string_concat
+  0              0  266       0.4804  296       0.5366  317       0.5751  291       0.5290  319       0.5773  277       0.5039  301       0.5460  286       0.5179  no-vmlinux               /no-vmlinux
+  0              0  55110    99.5196  54864    99.4634  54801    99.4249  54721    99.4710  54935    99.4227  54695    99.4961  54830    99.4540  54942    99.4821  asmttpd                  string_concat [self]
+-------------------------------------------------------------------------------
+0              0  3143      0.0244  3033      0.0236  3074      0.0239  3068      0.0239  3082      0.0240  3104      0.0241  3098      0.0241  3102      0.0241  asmttpd                  string_concat_int
+  0              0  15        0.4750  18        0.5900  22        0.7106  13        0.4219  24        0.7727  26        0.8307  16        0.5138  18        0.5769  no-vmlinux               /no-vmlinux
+  0              0  3143     99.5250  3033     99.4100  3074     99.2894  3068     99.5781  3082     99.2273  3104     99.1693  3098     99.4862  3102     99.4231  asmttpd                  string_concat_int [self]
+-------------------------------------------------------------------------------
+0              0  9604      0.0745  9615      0.0748  9893      0.0769  9638      0.0750  9814      0.0765  9648      0.0750  9648      0.0750  9442      0.0734  asmttpd                  string_contains
+  0              0  63        0.6517  55        0.5688  60        0.6028  58        0.5982  66        0.6680  60        0.6180  57        0.5873  66        0.6942  no-vmlinux               /no-vmlinux
+  0              0  9604     99.3483  9615     99.4312  9893     99.3972  9638     99.4018  9814     99.3320  9648     99.3820  9648     99.4127  9442     99.3058  asmttpd                  string_contains [self]
+-------------------------------------------------------------------------------
+0              0  4289      0.0333  4220      0.0328  4279      0.0333  4239      0.0330  4368      0.0340  4186      0.0326  4187      0.0325  4193      0.0326  asmttpd                  string_copy
+  0              0  13        0.3022  21        0.4952  20        0.4652  31        0.7260  18        0.4104  16        0.3808  34        0.8055  25        0.5927  no-vmlinux               /no-vmlinux
+  0              0  4289     99.6978  4220     99.5048  4279     99.5348  4239     99.2740  4368     99.5896  4186     99.6192  4187     99.1945  4193     99.4073  asmttpd                  string_copy [self]
+-------------------------------------------------------------------------------
+0              0  17492     0.1358  17610     0.1370  17605     0.1368  17738     0.1380  17810     0.1387  17765     0.1382  17676     0.1374  17615     0.1369  asmttpd                  string_ends_with
+  0              0  87        0.4949  102       0.5759  102       0.5760  93        0.5216  104       0.5806  105       0.5876  105       0.5905  96        0.5420  no-vmlinux               /no-vmlinux
+  0              0  17492    99.5051  17610    99.4241  17605    99.4240  17738    99.4784  17810    99.4194  17765    99.4124  17676    99.4095  17615    99.4580  asmttpd                  string_ends_with [self]
+-------------------------------------------------------------------------------
+0              0  5049      0.0392  5106      0.0397  5050      0.0393  5096      0.0396  5017      0.0391  4858      0.0378  5024      0.0390  5121      0.0398  asmttpd                  string_itoa
+  0              0  33        0.6494  35        0.6808  30        0.5906  29        0.5659  25        0.4958  25        0.5120  29        0.5739  35        0.6788  no-vmlinux               /no-vmlinux
+  0              0  5049     99.3506  5106     99.3192  5050     99.4094  5096     99.4341  5017     99.5042  4858     99.4880  5024     99.4261  5121     99.3212  asmttpd                  string_itoa [self]
+-------------------------------------------------------------------------------
+0              0  696       0.0054  632       0.0049  634       0.0049  670       0.0052  633       0.0049  671       0.0052  663       0.0052  624       0.0048  asmttpd                  string_itoa_done
+  0              0  0              0  3         0.4724  1         0.1575  5         0.7407  3         0.4717  2         0.2972  7         1.0448  4         0.6369  no-vmlinux               /no-vmlinux
+  0              0  696      100.000  632      99.5276  634      99.8425  670      99.2593  633      99.5283  671      99.7028  663      98.9552  624      99.3631  asmttpd                  string_itoa_done [self]
+-------------------------------------------------------------------------------
+0              0  17725     0.1376  17550     0.1366  17781     0.1382  17616     0.1370  17659     0.1376  17394     0.1353  17767     0.1381  17441     0.1355  asmttpd                  string_itoa_start
+  0              0  95        0.5331  70        0.3973  90        0.5036  98        0.5532  128       0.7196  94        0.5375  92        0.5151  99        0.5644  no-vmlinux               /no-vmlinux
+  0              0  17725    99.4669  17550    99.6027  17781    99.4964  17616    99.4468  17659    99.2804  17394    99.4625  17767    99.4849  17441    99.4356  asmttpd                  string_itoa_start [self]
+-------------------------------------------------------------------------------
+0              0  6004      0.0466  5986      0.0466  5974      0.0464  6011      0.0467  6061      0.0472  5999      0.0467  5923      0.0460  6165      0.0479  asmttpd                  string_remove
+  0              0  58        0.9568  39        0.6473  34        0.5659  34        0.5624  27        0.4435  38        0.6295  26        0.4370  39        0.6286  no-vmlinux               /no-vmlinux
+  0              0  6004     99.0432  5986     99.3527  5974     99.4341  6011     99.4376  6061     99.5565  5999     99.3705  5923     99.5630  6165     99.3714  asmttpd                  string_remove [self]
+-------------------------------------------------------------------------------
+0              0  2349      0.0182  2430      0.0189  2332      0.0181  2305      0.0179  2332      0.0182  2408      0.0187  2387      0.0186  2422      0.0188  asmttpd                  string_remove_ret
+  0              0  11        0.4661  20        0.8163  14        0.5968  14        0.6037  10        0.4270  18        0.7420  9         0.3756  13        0.5339  no-vmlinux               /no-vmlinux
+  0              0  2349     99.5339  2430     99.1837  2332     99.4032  2305     99.3963  2332     99.5730  2408     99.2580  2387     99.6244  2422     99.4661  asmttpd                  string_remove_ret [self]
+-------------------------------------------------------------------------------
+0              0  733       0.0057  675       0.0053  714       0.0056  737       0.0057  713       0.0056  669       0.0052  708       0.0055  666       0.0052  asmttpd                  string_remove_start
+  0              0  2         0.2721  3         0.4425  6         0.8333  3         0.4054  1         0.1401  5         0.7418  4         0.5618  10        1.4793  no-vmlinux               /no-vmlinux
+  0              0  733      99.7279  675      99.5575  714      99.1667  737      99.5946  713      99.8599  669      99.2582  708      99.4382  666      98.5207  asmttpd                  string_remove_start [self]
+-------------------------------------------------------------------------------
+0              0  695       0.0054  722       0.0056  658       0.0051  701       0.0055  687       0.0054  699       0.0054  679       0.0053  685       0.0053  asmttpd                  strstr_found
+  0              0  5         0.7143  3         0.4138  3         0.4539  3         0.4261  4         0.5789  5         0.7102  3         0.4399  4         0.5806  no-vmlinux               /no-vmlinux
+  0              0  695      99.2857  722      99.5862  658      99.5461  701      99.5739  687      99.4211  699      99.2898  679      99.5601  685      99.4194  asmttpd                  strstr_found [self]
+-------------------------------------------------------------------------------
+0              0  14577     0.1131  14393     0.1120  14114     0.1097  14289     0.1111  14346     0.1118  14507     0.1128  14607     0.1135  14483     0.1126  asmttpd                  strstr_loop
+  0              0  71        0.4847  58        0.4014  71        0.5005  111       0.7708  70        0.4856  77        0.5280  71        0.4837  74        0.5083  no-vmlinux               /no-vmlinux
+  0              0  14577    99.5153  14393    99.5986  14114    99.4995  14289    99.2292  14346    99.5144  14507    99.4720  14607    99.5163  14483    99.4917  asmttpd                  strstr_loop [self]
+-------------------------------------------------------------------------------
+0              0  1536      0.0119  1454      0.0113  1444      0.0112  1422      0.0111  1452      0.0113  1398      0.0109  1398      0.0109  1398      0.0109  asmttpd                  strstr_not_found
+  0              0  10        0.6468  7         0.4791  11        0.7560  3         0.2105  7         0.4798  4         0.2853  11        0.7807  8         0.5690  no-vmlinux               /no-vmlinux
+  0              0  1536     99.3532  1454     99.5209  1444     99.2440  1422     99.7895  1452     99.5202  1398     99.7147  1398     99.2193  1398     99.4310  asmttpd                  strstr_not_found [self]
+-------------------------------------------------------------------------------
+0              0  0              0  0              0  0              0  0              0  0              0  0              0  0              0  0              0  asmttpd                  sys_clone
+  3        100.000  0              0  0              0  0              0  0              0  0              0  0              0  0              0  0              0  no-vmlinux               /no-vmlinux
+  0              0  0              0  0              0  0              0  0              0  0              0  0              0  0              0  0              0  asmttpd                  sys_clone [self]
+-------------------------------------------------------------------------------
+0              0  23169     0.1798  22673     0.1764  23038     0.1791  23070     0.1794  23121     0.1801  23241     0.1808  23869     0.1855  23251     0.1807  asmttpd                  sys_close
+  0              0  2275940  98.9923  2265821  99.0093  2270932  98.9957  2268277  98.9932  2266807  98.9903  2271332  98.9871  2272411  98.9605  2279138  98.9901  no-vmlinux               /no-vmlinux
+  0              0  23169     1.0077  22673     0.9907  23038     1.0043  23070     1.0068  23121     1.0097  23241     1.0129  23869     1.0395  23251     1.0099  asmttpd                  sys_close [self]
+-------------------------------------------------------------------------------
+0              0  12477     0.0968  12431     0.0967  12143     0.0944  12138     0.0944  12260     0.0955  12267     0.0954  12343     0.0959  12202     0.0948  asmttpd                  sys_cork
+  0              0  138825   91.7536  138833   91.7819  138666   91.9481  138215   91.9270  138895   91.8891  139039   91.8926  139272   91.8590  138146   91.8842  no-vmlinux               /no-vmlinux
+  0              0  12477     8.2464  12431     8.2181  12143     8.0519  12138     8.0730  12260     8.1109  12267     8.1074  12343     8.1410  12202     8.1158  asmttpd                  sys_cork [self]
+-------------------------------------------------------------------------------
+0              0  18578     0.1442  18843     0.1466  18681     0.1452  18447     0.1435  18767     0.1462  18660     0.1451  18565     0.1443  18647     0.1449  asmttpd                  sys_lseek
+  0              0  139423   88.2418  138641   88.0350  139675   88.2032  139034   88.2862  139754   88.1612  138595   88.1339  138405   88.1729  139432   88.2040  no-vmlinux               /no-vmlinux
+  0              0  18578    11.7582  18843    11.9650  18681    11.7968  18447    11.7138  18767    11.8388  18660    11.8661  18565    11.8271  18647    11.7960  asmttpd                  sys_lseek [self]
+-------------------------------------------------------------------------------
+0              0  0              0  0              0  0              0  0              0  0              0  0              0  0              0  0              0  asmttpd                  sys_mmap_stack
+  1        100.000  0              0  0              0  0              0  0              0  0              0  0              0  0              0  0              0  no-vmlinux               /no-vmlinux
+  0              0  0              0  0              0  0              0  0              0  0              0  0              0  0              0  0              0  asmttpd                  sys_mmap_stack [self]
+-------------------------------------------------------------------------------
+0              0  12730     0.0988  12627     0.0982  12747     0.0991  12818     0.0997  12578     0.0980  12634     0.0983  12601     0.0979  12988     0.1009  asmttpd                  sys_open
+  0              0  871667   98.5606  872485   98.5734  870591   98.5570  873039   98.5530  871518   98.5773  871064   98.5703  871404   98.5746  872263   98.5328  no-vmlinux               /no-vmlinux
+  0              0  12730     1.4394  12627     1.4266  12747     1.4430  12818     1.4470  12578     1.4227  12634     1.4297  12601     1.4254  12988     1.4672  asmttpd                  sys_open [self]
+-------------------------------------------------------------------------------
+0              0  32256     0.2503  32118     0.2499  31661     0.2461  32197     0.2504  31963     0.2490  31855     0.2477  32037     0.2490  32163     0.2500  asmttpd                  sys_recv
+  0              0  3086554  98.9658  3085680  98.9698  3082489  98.9833  3082897  98.9664  3083405  98.9740  3084788  98.9779  3084866  98.9722  3083607  98.9677  no-vmlinux               /no-vmlinux
+  0              0  32256     1.0342  32118     1.0302  31661     1.0167  32197     1.0336  31963     1.0260  31855     1.0221  32037     1.0278  32163     1.0323  asmttpd                  sys_recv [self]
+-------------------------------------------------------------------------------
+0              0  9691      0.0752  9564      0.0744  9512      0.0739  9526      0.0741  9513      0.0741  9549      0.0743  9675      0.0752  9859      0.0766  asmttpd                  sys_send
+  0              0  528130   98.1981  527886   98.2205  526072   98.2240  528350   98.2290  527229   98.2276  528901   98.2266  528200   98.2013  526764   98.1628  no-vmlinux               /no-vmlinux
+  0              0  9691      1.8019  9564      1.7795  9512      1.7760  9526      1.7710  9513      1.7724  9549      1.7734  9675      1.7987  9859      1.8372  asmttpd                  sys_send [self]
+-------------------------------------------------------------------------------
+0              0  0              0  0              0  0              0  0              0  0              0  0              0  0              0  0              0  asmttpd                  sys_write
+  1        100.000  0              0  0              0  0              0  0              0  0              0  0              0  0              0  0              0  no-vmlinux               /no-vmlinux
+  0              0  0              0  0              0  0              0  0              0  0              0  0              0  0              0  0              0  asmttpd                  sys_write [self]

@@ -1,0 +1,39 @@
+Bessere Benchmark funktionen bauen. Das heißt in ein eigenes programm auslagern
+
+Diese funktion zu strcpy ohne längenangabe einbauen
+;Taken from
+;https://opensource.apple.com/source/Libc/Libc-1044.1.2/x86_64/string/strcpy.s
+strcpySSE:
+;	Begin by doing a single unaligned vector copy for edging.  We no longer
+;	have the original source pointer, but we can reconstruct it as rsi + rcx.
+	movdqu   xmm0, [rsi + rcx]
+	movdqu   [rdi], xmm0
+;	Next copy the original destination pointer to rax so that it is returned
+;	on exit, and adjust the destination pointer to correspond to rsi.
+	mov        rax, rdi
+	sub        rdi, rcx
+	xor        rcx, rcx
+;       Main copy loop: store the 16 bytes loaded in the previous iteration of the
+;	loop, as they are already known to not contain a NUL.  The load the next
+;	16 bytes and check for NUL.
+strcpy_loop_:	
+        movdqu      16[rdi + rcx], xmm1
+	add         rcx, 16
+	movdqa      xmm1, 16[rsi + rcx]
+	pxor        xmm0, xmm0
+	pcmpeqb     xmm0, xmm1
+;Das ist glaub ich zum checken von NULL
+	pmovmskb    edx, xmm0
+	test        edx, edx
+	jz          strcpy_loop_
+
+;	Cleanup: at least one of the bytes in the last 16 that were loaded was
+;	NUL.  The corresponding bits of dx are set, and all other bits are zero.
+;	Thus, we can use BSF to find the position of the first NUL.  Once we have
+;	this information, we use an unaligned copy that runs precisely up to this
+;	position to handle edging.
+	bsf         edx, edx
+	add         rcx, rdx
+	movdqu      xmm0, 1[rsi + rcx]      ; offset is 1 so that we copy the trailing
+	movdqu      1[rdi + rcx], xmm0      ; NUL byte as well.
+	ClearFrameAndReturn
