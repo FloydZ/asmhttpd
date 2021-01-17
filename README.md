@@ -1,17 +1,5 @@
 asmttpd
 =======
-
-
-Benchmarking Done with : http://oprofile.sourceforge.net/examples/
-operf ./asmttpd ./web_root 8 8080
-operf -g  ./asmttpd ./web_root 8 8082
-operf -g -vm-linuz --- ./asmttpd ./web_root 8 8082
-
-
-opannotate  --source --output-dir=./ --search-dirs=./
-
-opreport --long-filenames --callgraph    
-
 Web server for Linux written in amd64 assembly.
 
 Features:
