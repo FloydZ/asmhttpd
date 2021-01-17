@@ -1,3 +1,5 @@
 asmttpd
 benchmark
 *.o
+
+.idea/
