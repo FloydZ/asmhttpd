@@ -16,6 +16,8 @@
 ;You should have received a copy of the GNU General Public License
 ;along with asmttpd.  If not, see <http://www.gnu.org/licenses/>.
 
+%define ASMTTPD_VERSION "0.3"
+
 ;Constants
 %define FD_STDOUT 0x1
 %define THREAD_STACK_SIZE 16384

@@ -1,5 +1,10 @@
 Bessere Benchmark funktionen bauen. Das heißt in ein eigenes programm auslagern
 
+igzip updaten: https://github.com/intel/isa-l/tree/master/igzip
+von https://github.com/nemasu/asmttpd commit einbauen
+die string funktion von agner fog nehmen
+
+
 Diese funktion zu strcpy ohne längenangabe einbauen
 ;Taken from
 ;https://opensource.apple.com/source/Libc/Libc-1044.1.2/x86_64/string/strcpy.s

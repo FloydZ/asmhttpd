@@ -19,10 +19,6 @@
 %include "constants.asm"
 %include "macros.asm"
 
-
-
-%define ASMTTPD_VERSION "0.3"
-
 ;%define DEBUG
 %define LINUX
 
@@ -42,12 +38,13 @@ section .text
 	%include "debug.asm"
 
 
-        %include "igzip/init_stream.asm"
-        %include "igzip/igzip0c_body.asm"
-        %include "igzip/igzip0c_finish.asm"
-        %include "igzip/igzip1c_body.asm"
-        %include "igzip/igzip1c_finish.asm"
-        %include "deflate.asm"
+    ;%include "igzip/init_stream.asm"
+    ;%include "igzip/igzip0c_body.asm"
+    ;%include "igzip/igzip0c_finish.asm"
+    ;%include "igzip/igzip1c_body.asm"
+    ;%include "igzip/igzip1c_finish.asm"
+    ;%include "deflate.asm"
+
 global  _start
 
 _start:      
@@ -474,6 +471,8 @@ worker_thread_continue:
 	mov rdi, [rbp-8]
 	call sys_sendfile
 
+%ifdef DEBUG
+    ; logging of the sendfile
 	;stackpush
 	;push rax
 	;mov rdi, rsi
@@ -481,8 +480,10 @@ worker_thread_continue:
 	;call print_line ; debug
 	;pop rax
 	;stackpop
-	
-        pop r10; restore fd for close	
+%endif
+
+
+    pop r10; restore fd for close
 	jmp worker_thread_close_file
 	;---------206 Response End--------------
 
@@ -525,7 +526,7 @@ worker_thread_continue:
 
 %ifdef DEBUG	
 	;-----Simple send logging
-        stackpush
+    stackpush
 	mov rdi, msg_send_log
 	mov rsi, msg_send_log_len
 	call sys_write
@@ -536,7 +537,7 @@ worker_thread_continue:
 	call print_line
 
 	;-----End send logging
-        stackpop    
+    stackpop
 %endif	
 
 

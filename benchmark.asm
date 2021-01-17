@@ -1,11 +1,5 @@
-
-
-
 %include "constants.asm"
 %include "macros.asm"
-
-%define ASMTTPD_VERSION "0.3"
-
 
 section .data
 	%include "data.asm"
@@ -17,16 +11,15 @@ section .bss
 section .text
 	%include "string.asm"
 	%include "http.asm"
-
 	%include "syscall.asm"
 	%include "debug.asm"
 
-        %include "igzip/init_stream.asm"
-        %include "igzip/igzip0c_body.asm"
-        %include "igzip/igzip0c_finish.asm"
-        %include "igzip/igzip1c_body.asm"
-        %include "igzip/igzip1c_finish.asm"
-        %include "deflate.asm"
+    %include "igzip/init_stream.asm"
+    %include "igzip/igzip0c_body.asm"
+    %include "igzip/igzip0c_finish.asm"
+    %include "igzip/igzip1c_body.asm"
+    %include "igzip/igzip1c_finish.asm"
+    %include "deflate.asm"
 global  _start
 
 _start:   

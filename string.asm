@@ -71,12 +71,12 @@ string_atoi: ; rdi = string, rax = int
 	string_atoi_loop:
 	xor rbx, rbx
 	mov bl, BYTE [rdi+r10]
-	sub bl, 0x30   ;get byte, subtract to get real from ascii value
+	sub bl, 0x30    ;get byte, subtract to get real from ascii value
 	mov rax, r9    
 	mul rbx         ; multiply value by multiplier
-	add r8, rax    ; add result to running total
-	dec r10        ; next digit
-	mov rax, 10 ; multiply r9 ( multiplier ) by 10
+	add r8, rax     ; add result to running total
+	dec r10         ; next digit
+	mov rax, 10     ; multiply r9 ( multiplier ) by 10
 	mul r9
 	mov r9, rax
 	cmp r10, -1
@@ -318,7 +318,7 @@ string_ends_with:
 	pop rdi
 
 	add rdi, r8     ;Now haystack is set to the end
-        sub rdi, r10    ;Now haystack is set to the end - len(needle)
+    sub rdi, r10    ;Now haystack is set to the end - len(needle)
 
 	call strcmpeq   ;Cmp the 2 strings
 
