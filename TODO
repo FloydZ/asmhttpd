@@ -4,6 +4,9 @@ igzip updaten: https://github.com/intel/isa-l/tree/master/igzip
 von https://github.com/nemasu/asmttpd commit einbauen
 die string funktion von agner fog nehmen
 
+Bessere HaySTack Routine
+// copypasted from http://cprogramming.com/snippets/source-code/knuthmorrispratt-kmp-string-search-algorithm
+https://yurichev.com/news/20210121_Knuth_Morris_Pratt_3/
 
 Diese funktion zu strcpy ohne längenangabe einbauen
 ;Taken from

@@ -19,7 +19,7 @@
 %include "constants.asm"
 %include "macros.asm"
 
-;%define DEBUG
+%define DEBUG
 %define LINUX
 
 ;Follwing amd64 syscall standards for internal function calls: rdi rsi rdx r10 r8 r9
@@ -48,12 +48,11 @@ section .text
 global  _start
 
 _start:      
+    ;call init_stream
+    ;jmp bench
+    ;jmp _deflate_
 
-        ;call init_stream
-        ;jmp bench
-        ;jmp _deflate_
-
-        ;Parse the start text
+    ;Parse the start text
 	mov rdi, start_text
 	mov rsi, start_text_len
 	call print_line
@@ -62,24 +61,25 @@ _start:
 	cmp rdi,4        ;Exit if no argument, should be directory location
 	jne exit_with_help
         
-        ;Get the source dir
+    ;Get the source dir
 	mov rax, [rsp+16] ;Directory (first) parameter
 	mov [directory_path], rax 
 
-        ;Get the Threads
-        mov rdi, [rsp + 24] 
-        call string_atoi
-        mov [numThreads], rax
+    ;Get the Threads
+    mov rdi, [rsp + 24] 
+    call string_atoi
+    mov [numThreads], rax
 
 
-        ;Get the Port
-        mov rdi, [rsp + 32] 
-        call string_atoi
-        mov rdi, rax
-        call htons          ;sin_port = htons(portf);
-        mov [sin_port], eax
-
+    ;Get the Port
+    mov rdi, [rsp + 32] 
+    call string_atoi
+    mov rdi, rax
+    call htons          ;sin_port = htons(portf);
+    mov [sin_port], eax
+	
 %ifdef DEBUG
+	; print root directory
 	mov rdi, msg_using_directory
 	mov rsi, msg_using_directory_len
 	call sys_write
@@ -105,7 +105,7 @@ _start:
 	mov rdi, SIGPIPE
 	mov rax, SYS_RT_SIGACTION
 	syscall
-	
+
 
 	;Try opening directory
 	mov rdi, [directory_path]
@@ -145,27 +145,25 @@ _start:
 	jne thread_pool_setup
 
 main_thread:
-	
-        ;Dat main thread
+    ; the main thread
 	mov rdi, 10
 	call sys_sleep
 
 	jmp main_thread
 
 worker_thread:
-	
 	mov rbp, rsp
 	sub rsp, 24
 	;Offsets: 8 - socket fd, 16 - buffer, 24 - int used in tcp corking
 
 	mov QWORD [rbp-16], 0 ; Used for pointer to recieve buffer
 
-	mov rdi, THREAD_BUFFER_SIZE+2+URL_LENGTH_LIMIT+DIRECTORY_LENGTH_LIMIT ; Allow room to append null, and to create path
+	; Allow room to append null, and to create path
+	mov rdi, THREAD_BUFFER_SIZE+2+URL_LENGTH_LIMIT+DIRECTORY_LENGTH_LIMIT 
 	call sys_mmap_mem
 	mov QWORD [rbp-16], rax
 
 worker_thread_start:
-
 	call sys_accept
 
 	mov [rbp-8], rax ; save fd
@@ -174,7 +172,6 @@ worker_thread_start:
 	call sys_cork ; cork it
 
 worker_thread_continue:
-	
 	;HTTP Stuff starts here
 	mov rdi, QWORD [rbp-8] ;fd
 	mov rsi, [rbp-16]      ;buffer
@@ -482,7 +479,6 @@ worker_thread_continue:
 	;stackpop
 %endif
 
-
     pop r10; restore fd for close
 	jmp worker_thread_close_file
 	;---------206 Response End--------------
@@ -523,7 +519,6 @@ worker_thread_continue:
 	pop rdx
 	call sys_sendfile
 
-
 %ifdef DEBUG	
 	;-----Simple send logging
     stackpush
@@ -539,7 +534,6 @@ worker_thread_continue:
 	;-----End send logging
     stackpop
 %endif	
-
 
 	jmp worker_thread_close_file
 	;---------200 Response End--------------
