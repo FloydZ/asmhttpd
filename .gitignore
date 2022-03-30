@@ -3,5 +3,7 @@ benchmark
 *.o
 
 .idea/
+.cache/
+.local-history/
 cmake-build-debug
 cmake-build-release
